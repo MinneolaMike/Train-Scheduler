@@ -20,6 +20,87 @@
 
 <body>
 
+    <!-- Modal for train input -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Add Train To Schedule</h5>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Train Name</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Destination</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="exampleFormControlInput1">First Arrival Time (HH:mm)</label>
+                                <input type="time" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="exampleFormControlInput1">Frequency (min)</label>
+                                <input type="number" class="form-control">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        <i class="far fa-window-close"></i> Close</button>
+                    <button type="submit" class="btn btn-primary" value="submit">
+                        <i class="far fa-save"></i> Save Train</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--NavBar-->
+    <nav class="navbar fixed-top navbar-light bg-light">
+        <h1>Orlando Station</h1>
+    </nav>
+
+    <!-- Button trigger modal -->
+    <button type="button" id="modal" class="btn btn-primary" style="margin-top: 120px" data-toggle="modal" data-target="#exampleModalCenter">
+        <i class="fas fa-plus"></i>
+        <i class="fas fa-subway"></i>
+    </button>
+
+    <!--Main Container-->
+    <div class="container">
+        <!--Row-->
+        <div class="row">
+            <!--Column -- Train Schedule Table-->
+            <div class="col-md-12">
+                <div class="card" style="margin-top: 120px">
+                    <div class="card-header">
+                        Train Schedule
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Train Name</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Frequency (min)</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <!--Empty Table Row for Dynamic Info-->
+                            <tr>
+
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--JavaScript-->
     <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>

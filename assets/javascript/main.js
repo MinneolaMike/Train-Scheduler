@@ -16,13 +16,12 @@ $(document).ready(function () {
     var database = firebase.database();
 
     // Capture Button Click for Add Train
-    $("#saveTrain").on("click", function (event) {
-        event.preventDefault();
+    $("#savetrain").on("click", function (event) {
 
         // Variables from the Add Train Input Fields
         var name = $("#trainname").val().trim();
         var destination = $("destination").val().trim();
-        var frequency = $("#frequency").val().trim();
+        var frequency = $("#frequency").val();
         var nextArrival = moment($("#arrival").val().trim(), "HH:mm").format("X");
 
         // Creates temporary object to hold the New Train Added
@@ -41,8 +40,6 @@ $(document).ready(function () {
         console.log(newTrain.destination);
         console.log(newTrain.frequency);
         console.log(newTrain.nextArrival);
-
-        // alert("Employee successfully added");
 
         // Clears all of the Input Fields
         $("#trainname").val("");

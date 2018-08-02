@@ -63,7 +63,7 @@ $(document).ready(function () {
         // Minute Until Train
         var minutesAway = frequency - remainder;
         // Next Train
-        var nextArrival = moment().add(minutesAway, "minutes").format(nextArrival, "hh:mm");
+        var nextArrival = moment().add(minutesAway, "minutes").format("hh:mm A");
 
         // Create the new row
         var newRow = $("<tr>").append(
@@ -95,7 +95,7 @@ $(document).ready(function () {
             for (i = 1; i < (rows.length - 1); i++) {
                 //start by saying there should be no switching:
                 shouldSwitch = false;
-                // Grab the 2 elements you want to compare -- in this case index 4 (minutes away)
+                // Grab the 2 elements you want to compare -- in this case index 3 (minutes away)
                 x = rows[i].getElementsByTagName("TD")[3];
                 y = rows[i + 1].getElementsByTagName("TD")[3];
                 //check if the two rows should switch place:

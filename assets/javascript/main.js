@@ -42,10 +42,11 @@ $(document).ready(function () {
         $("#arrival").val("");
 
     });
-
+        
     // Function to add everything to firebase and DOM manipulation
     database.ref().on("child_added", function (childSnapshot) {
-        
+
+          
         // Store everything into a variable.
         var name = childSnapshot.val().name;
         var destination = childSnapshot.val().destination;
